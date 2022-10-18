@@ -12,7 +12,6 @@
   </p>
   <h3>호출</h3> <br>
   <p>
-   // allmenu 호출
   fetch("json/gnb.json")
     .then((res) => res.json())
     .then((data) => {
