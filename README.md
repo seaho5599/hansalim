@@ -10,7 +10,7 @@
     infoMenuShow.classList.toggle("click");
   };
   </p>
-  <h3>호출</h3> <br>
+  <h3>fetch호출</h3> <br>
   <p>
   fetch("json/gnb.json")
     .then((res) => res.json())
