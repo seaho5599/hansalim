@@ -10,3 +10,41 @@
     infoMenuShow.classList.toggle("click");
   };
   </p>
+  <h3>호출</h3>
+  <p>
+   // allmenu 호출
+  fetch("json/gnb.json")
+    .then((res) => res.json())
+    .then((data) => {
+      // console.log(data);
+      let html = "";
+      for (let i = 0; i < data.length; i++) {
+        let obj = data[i];
+        // console.log(obj);
+        let objSub = data[i].submenu;
+        // console.log("objSub", objSub);
+        // console.log("objSub.length", objSub.length);
+        if (objSub !== undefined) {
+          html += `
+          <li>
+            <a href=${obj.link}>${obj.title}</a>
+            <ul class="all-menu-sublist">`;
+
+          for (let j = 0; j < objSub.length; j++) {
+            let subObj = objSub[j];
+            // console.log(subObj);
+            html += `
+                  <li><a href="${subObj.sublink}">${subObj.subtitle}</a></li>
+                  `;
+          }
+          html += `</ul>
+
+          </li>`;
+        }
+      }
+      html += "";
+      // console.log("완료 : ", html);
+      document.querySelector(".all-menu-list").innerHTML = html;
+    })
+    .catch((err) => console.log(err));
+</p>
