@@ -119,6 +119,12 @@ body {
   float: left;
   border: 1px solid #ddd;
   line-height: 16px;
+  font-size: 11px;
+  font-weight: 500;
+  margin-top: 5px;
+  margin-left: 5px;
+  color: #888;
+  padding: 0 7px 0 7px;
 }
 .good-info-title {
   position: relative;
@@ -160,16 +166,23 @@ body {
   position: relative;
   display: block;
 }
+.section-title span {
+  font-size: 32px;
+
+  line-height: 40px;
+}
 .section-title .color-green {
   color: #76bd42;
+  font-weight: 700;
 }
-.section-title b {
+.section-title span b {
+  font-weight: 700;
 }
-.section-title-bar::after {
+.section-title span::after {
   content: "";
   position: absolute;
   left: 0;
-  bottom: 0;
+  bottom: -25px;
   width: 20px;
   height: 2px;
   background: #707070;
@@ -190,6 +203,26 @@ body {
   display: block;
   float: right;
   width: calc(100% - 305px);
+}
+.more-btn {
+  position: relative;
+  display: block;
+  color: #666;
+  border: 1px solid #bbb;
+  background: #fff;
+  width: 114px;
+  margin: 25px 0 108px 0;
+  text-align: center;
+  padding: 0 12px;
+  transition: all 0.3s ease;
+  font-size: 13px;
+  line-height: 2.5;
+}
+.more-btn:hover {
+  background: #f9f9f9;
+}
+.option-none {
+  display: none;
 }
 /* 헤더 */
 .header {
@@ -762,34 +795,260 @@ body {
 }
 .sale .inner {
   position: relative;
-  display: block;
+  display: flex;
+}
+.sale-left {
+  padding-top: 10px;
+  /* margin-right: 110px; */
+  width: calc(100% - 896px);
+}
+.sale-txt {
+  position: relative;
+  padding-top: 21px;
+  margin-top: 19px;
+}
+
+.sw-sale {
+  width: 896px;
+}
+.sw-sale-wrap {
+}
+.sw-sale-wrap .good-wrap {
+  /* justify-content: normal; */
+}
+.sw-sale .good-box ul.good-info li {
+  padding: 0 15px;
+}
+.sw-sale-control {
+  width: 141px;
+  text-align: center;
+}
+.sw-sale-prev {
+  float: left;
+  width: 26px;
+  height: 20px;
+  background: url("../images/swiperArrP.png") no-repeat center top;
+  border: 0;
+  cursor: pointer;
+}
+.sw-sale-prev:hover {
+  background: url("../images/swiperArrP.png") no-repeat center bottom;
+}
+.sw-sale-next {
+  float: right;
+  width: 26px;
+  height: 20px;
+  background: url("../images/swiperArrN.png") no-repeat center top;
+  border: 0;
+  cursor: pointer;
+}
+.sw-sale-next:hover {
+  background: url("../images/swiperArrN.png") no-repeat center bottom;
+}
+.sw-sale-pg {
+  display: inline;
+  font-size: 16px;
+  color: #bbb;
+}
+.sw-sale-pg .swiper-pagination-current {
+  font-weight: 700;
+  color: #222;
 }
 /* new아이템 */
 .newitem {
   position: relative;
   display: block;
+  padding: 80px 0;
 }
 .newitem .inner {
   position: relative;
   display: block;
 }
+.newitem .section-title span::after {
+  display: none;
+}
+.newitem-list {
+  position: relative;
+  height: 504px;
+  padding: 5px 0 20px 592px;
+  border-bottom: 1px solid #eee;
+  overflow: hidden;
+}
+.newitem-list li:first-child {
+  position: absolute;
+  left: 0;
+  top: 27px;
+  width: 591px;
+  margin: 0;
+}
+.newitem-list li {
+  float: left;
+  width: 288px;
+  margin: 22px 0 0 16px;
+}
+.newitem-list li a {
+}
+.newitem-list li:first-child a img {
+  width: 592px;
+  height: 370px;
+}
+.newitem-list li a img {
+  width: 288px;
+  height: 180px;
+}
+.newitem-list li:first-child a .tit {
+  margin-top: 16px;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 37px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.newitem-list li a .tit {
+  margin-top: 10px;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 25px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.newitem-list li a .txt {
+  margin-top: 4px;
+  font-size: 17px;
+  line-height: 25px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.newitem .more-btn {
+  position: absolute;
+  right: 0;
+  top: 44px;
+  width: 100px;
+  margin: 0;
+}
 /* 추천 */
 .recommend {
   position: relative;
   display: block;
+  padding: 80px 0;
+  background: #fff8fa;
 }
+
 .recommend .inner {
   position: relative;
-  display: block;
+  display: flex;
+}
+.recommend-left {
+  padding-top: 10px;
+  /* margin-right: 110px; */
+  width: calc(100% - 896px);
+}
+.recommend-txt {
+  position: relative;
+  display: inline-block;
+  font-size: 17px;
+  line-height: 29px;
+  padding-top: 21px;
+  margin-top: 19px;
+}
+.recommend-txt::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background: #76bd42;
+}
+.sw-recommend {
+  width: 896px;
+}
+
+.sw-recommend .good-box ul.good-info li {
+  padding: 0 15px;
+}
+.sw-recommend-control {
+  width: 141px;
+  text-align: center;
+  margin-top: 29px;
+}
+.sw-recommend-prev {
+  float: left;
+  width: 26px;
+  height: 20px;
+  background: url("../images/swiperArrP.png") no-repeat center top;
+  border: 0;
+  cursor: pointer;
+}
+.sw-recommend-prev:hover {
+  background: url("../images/swiperArrP.png") no-repeat center bottom;
+}
+.sw-recommend-next {
+  float: right;
+  width: 26px;
+  height: 20px;
+  background: url("../images/swiperArrN.png") no-repeat center top;
+  border: 0;
+  cursor: pointer;
+}
+.sw-recommend-next:hover {
+  background: url("../images/swiperArrN.png") no-repeat center bottom;
+}
+.sw-recommend-pg {
+  display: inline;
+  font-size: 16px;
+  color: #bbb;
+}
+.sw-recommend-pg .swiper-pagination-current {
+  font-weight: 700;
+  color: #222;
 }
 /* 인기상품 */
 .popular {
   position: relative;
   display: block;
+  padding: 80px 0;
 }
 .popular .inner {
   position: relative;
   display: block;
+}
+.popular .section-title span::after {
+  display: none;
+}
+.popular-tap {
+  position: relative;
+  margin-top: 30px;
+}
+.sw-popular {
+}
+.popular-btn {
+  display: block;
+  position: relative;
+  width: 100%;
+  text-align: center;
+  font-size: 17px;
+  background: #f9f9f9;
+  border: 2px solid #f9f9f9;
+}
+.popular-icon {
+  position: absolute;
+  left: 38px;
+  top: 20px;
+  width: 65px;
+  height: 64px;
+}
+.popular-tit {
+  position: relative;
+  display: block;
+  padding: 95px 0 16px 0;
+  line-height: 25px;
+}
+.pop-1 {
+  background: url("../images/popular1.png") no-repeat center top;
 }
 /* 브랜드 */
 .brand {

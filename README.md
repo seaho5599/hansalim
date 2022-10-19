@@ -63,3 +63,50 @@
 </p>
 <h2>비주얼</h2>
 <img src="asset/비주얼.png">
+<p>
+ fetch("json/visual.json")
+    .then((res) => res.json())
+    .then((data) => {
+      let html = "";
+      data.forEach((element) => {
+        html += `
+        <!-- <div class="swiper-slide"><a href ="${element.link}">
+          <img src="images/${element.img}" alt="비주얼이미지">
+        </a></div> -->
+        `;
+      });
+      html += "";
+      document.getElementById("sw-visual").innerHTML = html;
+      let swVisual = new Swiper(".sw-visual", {
+        loop: true,
+        autoplay: {
+          delay: 5000,
+          disableOnInteraction: false,
+        },
+        pagination: {
+          el: ".sw-visual-pg",
+          type: "fraction",
+        },
+        navigation: {
+          nextEl: ".sw-visual-next",
+          prevEl: ".sw-visual-prev",
+        },
+      });
+
+      let slideNow = "ing";
+      let swVisualPlay = document.querySelector(".sw-visual-play");
+      swVisualPlay.onclick = function () {
+        if (slideNow == "ing") {
+          slideNow = "stop";
+          swVisual.autoplay.stop();
+          swVisualPlay.classList.add("sw-visual-stop");
+        } else {
+          slideNow = "ing";
+          swVisual.autoplay.start();
+          swVisualPlay.classList.remove("sw-visual-stop");
+        }
+      };
+    })
+    .catch((err) => console.log(err));
+
+</p>

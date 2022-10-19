@@ -155,6 +155,7 @@ window.onload = function () {
       type: "0",
       link: "#",
       none: "good-none",
+      optionNon: "option-none",
     },
     {
       id: "good010203",
@@ -168,6 +169,7 @@ window.onload = function () {
       type2: "0",
       link: "#",
       none: "good-none",
+      optionNon: "option-none",
     },
     {
       id: "good010203",
@@ -180,6 +182,7 @@ window.onload = function () {
       type: "0",
       type2: "0",
       link: "#",
+      optionNon: "option-none",
     },
     {
       id: "good010203",
@@ -193,6 +196,7 @@ window.onload = function () {
       type2: "0",
       link: "#",
       none: "good-none",
+      optionNon: "option-none",
     },
     {
       id: "good010203",
@@ -206,6 +210,7 @@ window.onload = function () {
       type2: "0",
       link: "#",
       none: "good-none",
+      optionNon: "option-none",
     },
     {
       id: "good010203",
@@ -218,6 +223,7 @@ window.onload = function () {
       type: "0",
       type2: "0",
       link: "#",
+      optionNon: "option-none",
     },
     {
       id: "good010203",
@@ -230,6 +236,7 @@ window.onload = function () {
       type: "0",
       type2: "0",
       link: "#",
+      optionNon: "option-none",
     },
     {
       id: "good010203",
@@ -242,6 +249,298 @@ window.onload = function () {
       type2: "0",
       type: "0",
       link: "#",
+      optionNon: "option-none",
+    },
+  ];
+  let saleData = [
+    {
+      id: "good010203",
+      img: "sale1.jpg",
+      title: "담감",
+      unit: "조생:1.5kg",
+      price: "15,500",
+      option: " ,유기농,무농약",
+      option2: "인기,새물품,햇물품",
+      type: "0",
+      type2: "0",
+      type: "0",
+      link: "#",
+      optionNon: "option-none",
+    },
+    {
+      id: "good010203",
+      img: "sale2.jpg",
+      title: "자연그대로 남성용로션",
+      unit: "110ml",
+      price: "14,500",
+      option: " ,유기농,무농약",
+      option2: "인기,새물품,햇물품",
+      type: "0",
+      type2: "0",
+      link: "#",
+      none: "good-none",
+      optionNon: "option-none",
+    },
+    {
+      id: "good010203",
+      img: "sale3.jpg",
+      title: "자연그대로 남성용스킨",
+      unit: "100ml",
+      price: "12,000",
+      option: " ,유기농,무농약",
+      option2: "인기,새물품,햇물품",
+      type: "0",
+      type2: "0",
+      link: "#",
+      none: "good-none",
+      optionNon: "option-none",
+    },
+    {
+      id: "good010203",
+      img: "sale4.jpg",
+      title: "자연그대로 녹차 트러블로션",
+      unit: "100ml",
+      price: "14,300",
+      option: " ,유기농,무농약",
+      option2: "인기,새물품,햇물품",
+      type: "0",
+      type2: "0",
+      link: "#",
+      none: "good-none",
+      optionNon: "option-none",
+    },
+    {
+      id: "good010203",
+      img: "sale5.jpg",
+      title: "자연그대로 녹차 트러블스팟",
+      unit: "20ml",
+      price: "9,500",
+      option: " ,유기농,무농약",
+      option2: "인기,새물품,햇물품",
+      type: "0",
+      type2: "0",
+      link: "#",
+      none: "good-none",
+      optionNon: "option-none",
+    },
+    {
+      id: "good010203",
+      img: "sale6.jpg",
+      title: "자연그대로 녹차 트러블토너",
+      unit: "150ml",
+      price: "14,300",
+      option: " ,유기농,무농약",
+      option2: "인기,새물품,햇물품",
+      type: "0",
+      type2: "0",
+      link: "#",
+      none: "good-none",
+      optionNon: "option-none",
+    },
+    {
+      id: "good010203",
+      img: "sale7.jpg",
+      title: "자연그대로 더마로션",
+      unit: "200ml",
+      price: "1,600",
+      option: " ,유기농,무농약",
+      option2: "인기,새물품,햇물품",
+      type: "0",
+      type2: "0",
+      link: "#",
+      none: "good-none",
+      optionNon: "option-none",
+    },
+    {
+      id: "good010203",
+      img: "sale8.jpg",
+      title: "자연그대로 더마크림",
+      unit: "200g",
+      price: "34,500",
+      option: ",유기농,무농약",
+      option2: "인기,새물품,햇물품",
+      type2: "0",
+      type: "0",
+      link: "#",
+      none: "good-none",
+      optionNon: "option-none",
+    },
+    {
+      id: "good010203",
+      img: "sale9.jpg",
+      title: "자연그대로 토너",
+      unit: "150ml",
+      price: "15,000",
+      option: ",유기농,무농약",
+      option2: "인기,새물품,햇물품",
+      type2: "0",
+      type: "0",
+      link: "#",
+      optionNon: "option-none",
+    },
+    {
+      id: "good010203",
+      img: "sale10.jpg",
+      title: "자연그대로 에센스",
+      unit: "50ml",
+      price: "33,000",
+      option: ",유기농,무농약",
+      option2: "인기,새물품,햇물품",
+      type2: "0",
+      type: "0",
+      link: "#",
+      none: "good-none",
+      optionNon: "option-none",
+    },
+    {
+      id: "good010203",
+      img: "sale11.jpg",
+      title: "자연그대로 로션",
+      unit: "120ml",
+      price: "21,000",
+      option: ",유기농,무농약",
+      option2: "인기,새물품,햇물품",
+      type2: "0",
+      type: "0",
+      link: "#",
+      none: "good-none",
+      optionNon: "option-none",
+    },
+    {
+      id: "good010203",
+      img: "sale12.jpg",
+      title: "자연그대로 크림",
+      unit: "60g",
+      price: "21,000",
+      option: ",유기농,무농약",
+      option2: "인기,새물품,햇물품",
+      type2: "0",
+      type: "0",
+      link: "#",
+      none: "good-none",
+      optionNon: "option-none",
+    },
+  ];
+  let recommendData = [
+    {
+      id: "good010203",
+      img: "recommend1.jpg",
+      title: "유기농단백질가루",
+      unit: "녹차맛:300g",
+      price: "16,000",
+      option: "",
+      option2: "인기,새물품,햇물품",
+      type: "3",
+      type2: "0",
+      type: "0",
+      link: "#",
+      optionNon: "option-none",
+    },
+    {
+      id: "good010203",
+      img: "recommend2.jpg",
+      title: "견과바",
+      unit: "35g",
+      price: "2,100",
+      option: " ,유기농,무농약,목초우유,유기가공식품",
+      option2: "인기,새물품,햇물품",
+      type: "0",
+      type2: "0",
+      link: "#",
+
+      optionNon: "option-none",
+    },
+    {
+      id: "good010203",
+      img: "recommend3.jpg",
+      title: "매일견과",
+      unit: "25g*10봉",
+      price: "22,500",
+      option: " ,유기농,무농약,목초우유,유기가공식품",
+      option2: "인기,새물품,햇물품",
+      type: "0",
+      type2: "0",
+      link: "#",
+      none: "good-none",
+      optionNon: "option-none",
+    },
+    {
+      id: "good010203",
+      img: "recommend4.jpg",
+      title: "카카오파이",
+      unit: "152g/4개",
+      price: "6,650",
+      option: " ,유기농,무농약,목초우유,유기가공식품",
+      option2: "인기,새물품,햇물품",
+      type: "0",
+      type2: "0",
+      link: "#",
+
+      optionNon: "option-none",
+    },
+    {
+      id: "good010203",
+      img: "recommend5.jpg",
+      title: "구운유정란",
+      unit: "6알",
+      price: "4,400",
+      option: " ,유기농,무농약,목초우유,유기가공식품",
+      option2: "인기,새물품,햇물품",
+      type: "0",
+      type2: "0",
+      link: "#",
+
+      optionNon: "option-none",
+    },
+    {
+      id: "good010203",
+      img: "recommend6.jpg",
+      title: "목초우유",
+      unit: "200ml",
+      price: "1,400",
+      option: "유기가공식품",
+      option2: "인기,새물품,햇물품",
+      type: "3",
+      type2: "0",
+      link: "#",
+    },
+    {
+      id: "good010203",
+      img: "recommend7.jpg",
+      title: "플레인요구르트",
+      unit: "범산/450ml",
+      price: "4,500",
+      option: "유기가공식품",
+      option2: "인기,새물품,햇물품",
+      type: "4",
+      type2: "0",
+      link: "#",
+    },
+    {
+      id: "good010203",
+      img: "recommend8.jpg",
+      title: "밤고구마",
+      unit: "1kg",
+      price: "4,000",
+      option: "유기농,무농약",
+      option2: "인기,새물품,햇물품",
+      type2: "0",
+      type: "0",
+      link: "#",
+    },
+    {
+      id: "good010203",
+      img: "recommend9.jpg",
+      title: "냉동딸기",
+      unit: "500g",
+      price: "5,600",
+      option: " ,유기농,무농약,목초우유,유기가공식품",
+      option2: "인기,새물품,햇물품",
+      type2: "0",
+      type: "0",
+      link: "#",
+      none: "good-none",
+      optionNon: "option-none",
     },
   ];
   // 목록 html 을 생성해 주는 함수
@@ -255,7 +554,7 @@ window.onload = function () {
 
     let html = "";
     for (let i = 0, index = 0; i < row; i++) {
-      html += `<div class="good-wrap">`;
+      html += `<div class="swiper-slide good-wrap">`;
 
       for (let j = 0; j < col; j++) {
         if (index < dataTotal) {
@@ -274,9 +573,9 @@ window.onload = function () {
 
           // 옵션출력하기
           let optArr = goodObj.option.split(",");
-
-          let a = goodObj.type;
-          html += `<span class="good-info-option">${optArr[a]}</span>`;
+          for (let k = 0; k < optArr.length; k++) {
+            html += `<span class="good-info-option ${goodObj.optionNon}">${optArr[k]}</span>`;
+          }
 
           html += `</li>
         <li>
@@ -301,4 +600,35 @@ window.onload = function () {
   }
   // 추천상품출력
   makeList(mainItemData, ".mainitem-wrap", 4);
+  // 세일상품출력
+  makeList(saleData, ".sw-sale-wrap", 3);
+  let swSale = new Swiper(".sw-sale", {
+    spaceBetween: 16,
+    pagination: {
+      el: ".sw-sale-pg",
+      type: "fraction",
+    },
+    navigation: {
+      nextEl: ".sw-sale-next",
+      prevEl: ".sw-sale-prev",
+    },
+  });
+
+  // 추천상품출력
+  makeList(recommendData, ".sw-recommend-wrap", 3);
+  let swRecommend = new Swiper(".sw-recommend", {
+    spaceBetween: 16,
+    pagination: {
+      el: ".sw-recommend-pg",
+      type: "fraction",
+    },
+    navigation: {
+      nextEl: ".sw-recommend-next",
+      prevEl: ".sw-recommend-prev",
+    },
+  });
+  let swPopular = new Swiper(".sw-popular", {
+    slidesPerView: 7,
+    spaceBetween: 16,
+  });
 };
