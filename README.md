@@ -1,4 +1,5 @@
 # hansalim
+
 <h1>한살림 장보기 :: 지구를 살리는 뜻깊은 생활실천, 한살림</h1> <br>
 <p>jquery를 사용하지 않고 자바스크립트만으로 작업 예정</p> <br>
 <img src="https://user-images.githubusercontent.com/107973870/196312500-281fbe17-75e7-4d1e-919d-4e8f42bd0834.png"><br>
@@ -9,6 +10,17 @@
   infoMenu.onclick = function () {
     infoMenuShow.classList.toggle("click");
   };
+  </p>
+  <h3>헤더 픽스, 스크롤 이벤트</h3>
+  <p>
+    window.addEventListener("scroll", () => {
+    let temp = window.scrollY;
+    if (temp > 50) {
+      document.querySelector(".header-bottom").classList.add("fixed");
+    } else {
+      document.querySelector(".header-bottom").classList.remove("fixed");
+    }
+  });
   </p>
   <h3>fetch호출</h3> <br>
   <p>
@@ -25,9 +37,10 @@
         // console.log("objSub.length", objSub.length);
         if (objSub !== undefined) {
           html += `
-          <li>
-            <a href=${obj.link}>${obj.title}</a>
-            <ul class="all-menu-sublist">`;
+            <!-- <li> -->
+            <!-- <a href=${obj.link}>${obj.title}</a> -->
+            <!-- <ul class="all-menu-sublist"> -->
+            `;
 
           for (let j = 0; j < objSub.length; j++) {
             let subObj = objSub[j];
@@ -46,4 +59,7 @@
       document.querySelector(".all-menu-list").innerHTML = html;
     })
     .catch((err) => console.log(err));
+
 </p>
+<h2>비주얼</h2>
+<img src="asset/비주얼.png">

@@ -5,6 +5,15 @@ window.onload = function () {
   infoMenu.onclick = function () {
     infoMenuShow.classList.toggle("click");
   };
+  // header fix
+  window.addEventListener("scroll", () => {
+    let temp = window.scrollY;
+    if (temp > 50) {
+      document.querySelector(".header-bottom").classList.add("fixed");
+    } else {
+      document.querySelector(".header-bottom").classList.remove("fixed");
+    }
+  });
   // allmenu 호출
   fetch("json/gnb.json")
     .then((res) => res.json())
@@ -107,14 +116,189 @@ window.onload = function () {
           disableOnInteraction: false,
         },
         pagination: {
-          el: ".swiper-pagination",
+          el: ".sw-visual-pg",
           type: "fraction",
         },
         navigation: {
-          nextEl: ".swiper-button-next",
-          prevEl: ".swiper-button-prev",
+          nextEl: ".sw-visual-next",
+          prevEl: ".sw-visual-prev",
         },
       });
+
+      let slideNow = "ing";
+      let swVisualPlay = document.querySelector(".sw-visual-play");
+      swVisualPlay.onclick = function () {
+        if (slideNow == "ing") {
+          slideNow = "stop";
+          swVisual.autoplay.stop();
+          swVisualPlay.classList.add("sw-visual-stop");
+        } else {
+          slideNow = "ing";
+          swVisual.autoplay.start();
+          swVisualPlay.classList.remove("sw-visual-stop");
+        }
+      };
     })
     .catch((err) => console.log(err));
+  let mainItemData;
+  mainItemData = [
+    {
+      id: "good010203",
+      img: "main1.jpg",
+      title: "꼬마와땅곱게다진멸치",
+      unit: "80g",
+      price: "4,400",
+      option: " ,유기농,무농약",
+      option2: "인기,새물품,햇물품",
+      type: "0",
+      type2: "0",
+      type: "0",
+      link: "#",
+      none: "good-none",
+    },
+    {
+      id: "good010203",
+      img: "main2.jpg",
+      title: "갈색양송이버섯",
+      unit: "140g",
+      price: "3,250",
+      option: " ,유기농,무농약",
+      option2: "인기,새물품,햇물품",
+      type: "0",
+      type2: "0",
+      link: "#",
+      none: "good-none",
+    },
+    {
+      id: "good010203",
+      img: "main3.jpg",
+      title: "오이",
+      unit: "3개",
+      price: "2,650",
+      option: " ,유기농,무농약",
+      option2: "인기,새물품,햇물품",
+      type: "0",
+      type2: "0",
+      link: "#",
+    },
+    {
+      id: "good010203",
+      img: "main4.jpg",
+      title: "생알땅콩",
+      unit: "국산/500g",
+      price: "11,400",
+      option: " ,유기농,무농약",
+      option2: "인기,새물품,햇물품",
+      type: "0",
+      type2: "0",
+      link: "#",
+      none: "good-none",
+    },
+    {
+      id: "good010203",
+      img: "main5.jpg",
+      title: "미더덕",
+      unit: "250g",
+      price: "6,600",
+      option: " ,유기농,무농약",
+      option2: "인기,새물품,햇물품",
+      type: "0",
+      type2: "0",
+      link: "#",
+      none: "good-none",
+    },
+    {
+      id: "good010203",
+      img: "main6.jpg",
+      title: "양파",
+      unit: "2kg",
+      price: "5,500",
+      option: " ,유기농,무농약",
+      option2: "인기,새물품,햇물품",
+      type: "0",
+      type2: "0",
+      link: "#",
+    },
+    {
+      id: "good010203",
+      img: "main7.jpg",
+      title: "상추",
+      unit: "150g",
+      price: "1,600",
+      option: " ,유기농,무농약",
+      option2: "인기,새물품,햇물품",
+      type: "0",
+      type2: "0",
+      link: "#",
+    },
+    {
+      id: "good010203",
+      img: "main8.jpg",
+      title: "양상추",
+      unit: "300g/1통",
+      price: "2,250",
+      option: ",유기농,무농약",
+      option2: "인기,새물품,햇물품",
+      type2: "0",
+      type: "0",
+      link: "#",
+    },
+  ];
+  // 목록 html 을 생성해 주는 함수
+  function makeList(_data, _tag, _col) {
+    // 물품 출력 코드
+    let dataTotal = _data.length;
+    // 항목당 보여줄 개수
+    let col = _col;
+    //  만들어질 가로 수
+    let row = Math.ceil(dataTotal / col);
+
+    let html = "";
+    for (let i = 0, index = 0; i < row; i++) {
+      html += `<div class="good-wrap">`;
+
+      for (let j = 0; j < col; j++) {
+        if (index < dataTotal) {
+          let goodObj = _data[index];
+          let opt2Arr = goodObj.option2.split(",");
+          html += `
+    <div class="good-box">
+      <a href="${goodObj.link}" class="img-link">
+        <p class="good-state ${goodObj.none}"><span>${
+            opt2Arr[goodObj.type2]
+          }</span></p>
+        <img src="images/${goodObj.img}" alt="${goodObj.title}" />
+      </a>
+      <ul class="good-info">
+        <li>`;
+
+          // 옵션출력하기
+          let optArr = goodObj.option.split(",");
+
+          let a = goodObj.type;
+          html += `<span class="good-info-option">${optArr[a]}</span>`;
+
+          html += `</li>
+        <li>
+          <p class="good-info-title">${goodObj.title}(<em>${goodObj.unit}</em>)</p>
+        </li>
+        <li>
+          <p class="good-info-price"><b>${goodObj.price}</b>원</p>
+          <button class="good-cart-add"></button>
+        </li>
+      </ul>
+    </div>
+  `;
+          index++;
+        }
+      }
+
+      html += `</div>`;
+    }
+
+    let div = document.querySelector(_tag);
+    div.innerHTML = html;
+  }
+  // 추천상품출력
+  makeList(mainItemData, ".mainitem-wrap", 4);
 };
