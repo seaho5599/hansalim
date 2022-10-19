@@ -11,25 +11,52 @@ window.onload = function () {
     .then((data) => {
       // console.log(data);
       let html = "";
-      data.forEach((element) => {
-        let subMenu = element.submenu;
-        console.log("1", subMenu);
-        html += `
-            <li>
-              <a href=${element.link}>${element.title}</a>
-                <ul>
-                  <li>
-                    <a href="${element.sublink}">${element.subtitle}</a>
-                    </li>
-                </ul>
-            </li>  
-        `;
-      });
+      for (let i = 0; i < data.length; i++) {
+        let obj = data[i];
+        // console.log(obj);
+        let objSub = data[i].submenu;
+        // console.log("objSub", objSub);
+        // console.log("objSub.length", objSub.length);
+        if (objSub !== undefined) {
+          html += `
+          <li>
+            <a href=${obj.link}>${obj.title}</a>
+            <ul class="all-menu-sublist">`;
+
+          for (let j = 0; j < objSub.length; j++) {
+            let subObj = objSub[j];
+            // console.log(subObj);
+            html += `
+                  <li><a href="${subObj.sublink}">${subObj.subtitle}</a></li>
+                  `;
+          }
+          html += `</ul>
+
+          </li>`;
+        }
+      }
       html += "";
+      // console.log("완료 : ", html);
       document.querySelector(".all-menu-list").innerHTML = html;
     })
     .catch((err) => console.log(err));
 
+  fetch("json/gnb2.json")
+    .then((res) => res.json())
+    .then((data) => {
+      // console.log(data);
+      let html = "";
+      data.forEach((element) => {
+        html += `
+        <li>
+            <a href=${element.link}>${element.title}</a>
+            </li>
+        `;
+      });
+      html += "";
+      document.querySelector(".all-menu-list2").innerHTML = html;
+    })
+    .catch((err) => console.log(err));
   // gnb 버튼
   let join = document.querySelector(".join");
   let moreMenu = document.querySelector(".more-menu");
@@ -58,4 +85,36 @@ window.onload = function () {
     depth2.classList.remove("click");
     join.classList.remove("join-click");
   };
+
+  // visual swiper
+  fetch("json/visual.json")
+    .then((res) => res.json())
+    .then((data) => {
+      let html = "";
+      data.forEach((element) => {
+        html += `
+        <div class="swiper-slide"><a href ="${element.link}">
+          <img src="images/${element.img}" alt="비주얼이미지">
+        </a></div>
+        `;
+      });
+      html += "";
+      document.getElementById("sw-visual").innerHTML = html;
+      let swVisual = new Swiper(".sw-visual", {
+        loop: true,
+        autoplay: {
+          delay: 5000,
+          disableOnInteraction: false,
+        },
+        pagination: {
+          el: ".swiper-pagination",
+          type: "fraction",
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+      });
+    })
+    .catch((err) => console.log(err));
 };

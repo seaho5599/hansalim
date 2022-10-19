@@ -242,6 +242,74 @@ body {
   height: 2px;
   background: #000;
 }
+.all-menu {
+  position: absolute;
+  display: none;
+  left: 0;
+  top: 63px;
+  overflow: auto;
+  width: 209px;
+  background: #fff;
+  border: 1px solid #ddd;
+  box-shadow: 0 3px 6px 0 rgb(0 0 0 / 16%);
+  outline: none;
+  touch-action: none;
+  /* width: 210px; */
+  max-height: calc(100vh - 234px);
+}
+.all-menu-list {
+  padding-right: 8px;
+}
+.all-menu-list > li {
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 40px;
+}
+.all-menu-list > li:hover .all-menu-sublist {
+  display: block;
+}
+.all-menu-list > li > a {
+  position: relative;
+  display: block;
+  padding: 0 20px;
+}
+.all-menu-list > li > a::after {
+  content: "";
+  position: absolute;
+  right: 20px;
+  top: 15px;
+  width: 6px;
+  height: 10px;
+}
+.all-menu-list2 {
+}
+.all-menu-list2 li {
+  /* font-size: 15px;
+  font-weight: 500;
+  line-height: 40px; */
+}
+.all-menu-list2 li a {
+  /* position: relative;
+  display: block;
+  padding: 0 20px;*/
+}
+.all-menu-sublist {
+  position: absolute;
+  display: none;
+  left: 201px;
+  bottom: 0;
+  z-index: 500;
+  width: 209px;
+
+  height: 100%;
+  padding: 10px 0;
+  background: #f9f9f9;
+}
+.all-menu-sublist li {
+}
+.all-menu-sublist li a {
+}
+
 .gnb-list {
   display: flex;
   margin-left: 8px;
@@ -345,6 +413,7 @@ body {
   background: #fff;
   border: 1px solid #ddd;
   box-shadow: 0 3px 6px 0 rgb(0 0 0 / 16%);
+  z-index: 999;
 }
 
 .depth2 li {
@@ -430,10 +499,7 @@ body {
   position: relative;
   display: block;
 }
-.visual .inner {
-  position: relative;
-  display: block;
-}
+
 /* 메인아이템 */
 .mainitem {
   position: relative;
