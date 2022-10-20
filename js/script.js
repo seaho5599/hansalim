@@ -574,7 +574,7 @@ window.onload = function () {
           // 옵션출력하기
           let optArr = goodObj.option.split(",");
           for (let k = 0; k < optArr.length; k++) {
-            html += `<span class="good-info-option ${goodObj.optionNon}">${optArr[k]}</span>`;
+            html += `<span class="good-info-option ${goodObj.optionNon} ${goodObj.optionRed}">${optArr[k]}</span>`;
           }
 
           html += `</li>
@@ -627,8 +627,900 @@ window.onload = function () {
       prevEl: ".sw-recommend-prev",
     },
   });
+  // 인기상품 스와이퍼 및 클릭 이벤트
   let swPopular = new Swiper(".sw-popular", {
     slidesPerView: 7,
-    spaceBetween: 16,
+    spaceBetween: 10,
+    slidesPerGroup: 7,
+    navigation: {
+      nextEl: ".sw-popular-next",
+      prevEl: ".sw-popular-prev",
+    },
   });
+  // let popularBtn1 = document.querySelector(".sw-popular .swiper-slide");
+  let popularBtnAll = document.querySelectorAll(".popular-btn");
+  // let popularBtn = document.querySelector(".popular-btn");
+  // popularBtn.onclick = function () {
+  //   popularBtn.classList.add("pop-click");
+  // };
+  popularBtnAll.forEach((element, index) => {
+    element.onclick = function () {
+      // element.classList.remove("pop-click");
+      element.classList.add("pop-click");
+      // element.focus();
+    };
+  });
+  let popData1 = [
+    {
+      id: "good010203",
+      img: "pop1.jpg",
+      title: "백미/유",
+      unit: "4kg",
+      price: "17,900",
+      option: "유기농",
+      option2: "인기,새물품,햇물품",
+      type: "0",
+      type2: "2",
+
+      link: "#",
+    },
+    {
+      id: "good010203",
+      img: "pop2.jpg",
+      title: "귀리",
+      unit: "유/500g",
+      price: "4,800",
+      option: "유기농",
+      option2: "인기,새물품,햇물품",
+      type: "0",
+      type2: "0",
+      link: "#",
+    },
+    {
+      id: "good010203",
+      img: "pop3.jpg",
+      title: "현미/유",
+      unit: "4kg",
+      price: "17,200",
+      option: "유기농",
+      option2: "인기,새물품,햇물품",
+      type: "0",
+      type2: "2",
+      link: "#",
+    },
+    {
+      id: "good010203",
+      img: "pop4.jpg",
+      title: "찰흑미",
+      unit: "500g",
+      price: "3,100",
+      option: "유기농",
+      option2: "인기,새물품,햇물품",
+      type: "0",
+      type2: "0",
+      link: "#",
+    },
+  ];
+  let popData2 = [
+    {
+      id: "good010203",
+      img: "pop5.jpg",
+      title: "콩나물",
+      unit: "300g",
+      price: "1,550",
+      option: "무농약",
+      option2: "인기,새물품,햇물품",
+      type: "0",
+      type2: "0",
+
+      link: "#",
+    },
+    {
+      id: "good010203",
+      img: "pop6.jpg",
+      title: "깻잎",
+      unit: "30장",
+      price: "1,150",
+      option: "유기농,무농약",
+      option2: "인기,새물품,햇물품",
+      type: "0",
+      type2: "0",
+      link: "#",
+    },
+    {
+      id: "good010203",
+      img: "pop7.jpg",
+      title: "당근",
+      unit: "500g",
+      price: "3,200",
+      option: "유기농,무농약",
+      option2: "인기,새물품,햇물품",
+      type: "0",
+      type2: "0",
+      link: "#",
+    },
+    {
+      id: "good010203",
+      img: "pop8.jpg",
+      title: "상추",
+      unit: "150g",
+      price: "1,600",
+      option: "유기농,무농약",
+      option2: "인기,새물품,햇물품",
+      type: "0",
+      type2: "0",
+      link: "#",
+    },
+  ];
+  let popData3 = [
+    {
+      id: "good010203",
+      img: "pop9.jpg",
+      title: "사과",
+      unit: "2kg",
+      price: "13,300",
+      option: "참여인증-1단계",
+      option2: "인기,새물품,햇물품",
+      type: "3",
+      type2: "0",
+      type: "0",
+      link: "#",
+    },
+    {
+      id: "good010203",
+      img: "pop10.jpg",
+      title: "단감",
+      unit: "조생:1.5kg",
+      price: "15,500",
+      option: " 유기농,무농약,목초우유,유기가공식품",
+      option2: "인기,새물품,햇물품,알뜰",
+      type: "0",
+      type2: "3",
+      link: "#",
+      optionRed: "option-red",
+
+      optionNon: "option-none",
+    },
+    {
+      id: "good010203",
+      img: "pop11.jpg",
+      title: "배",
+      unit: "대:3개",
+      price: "11,200",
+      option: " ,유기농,무농약,목초우유,유기가공식품",
+      option2: "인기,새물품,햇물품",
+      type: "0",
+      type2: "0",
+      link: "#",
+
+      optionNon: "option-none",
+    },
+    {
+      id: "good010203",
+      img: "pop12.jpg",
+      title: "레몬",
+      unit: "500g/무농약이상",
+      price: "7,400",
+      option: "유기농,무농약",
+      option2: "인기,새물품,햇물품",
+      type: "0",
+      type2: "0",
+      link: "#",
+    },
+  ];
+  let popData4 = [
+    {
+      id: "good010203",
+      img: "recommend1.jpg",
+      title: "유기농단백질가루",
+      unit: "녹차맛:300g",
+      price: "16,000",
+      option: "",
+      option2: "인기,새물품,햇물품",
+      type: "3",
+      type2: "0",
+      type: "0",
+      link: "#",
+      optionNon: "option-none",
+    },
+    {
+      id: "good010203",
+      img: "recommend2.jpg",
+      title: "견과바",
+      unit: "35g",
+      price: "2,100",
+      option: " ,유기농,무농약,목초우유,유기가공식품",
+      option2: "인기,새물품,햇물품",
+      type: "0",
+      type2: "0",
+      link: "#",
+
+      optionNon: "option-none",
+    },
+    {
+      id: "good010203",
+      img: "recommend3.jpg",
+      title: "매일견과",
+      unit: "25g*10봉",
+      price: "22,500",
+      option: " ,유기농,무농약,목초우유,유기가공식품",
+      option2: "인기,새물품,햇물품",
+      type: "0",
+      type2: "0",
+      link: "#",
+      none: "good-none",
+      optionNon: "option-none",
+    },
+    {
+      id: "good010203",
+      img: "recommend4.jpg",
+      title: "카카오파이",
+      unit: "152g/4개",
+      price: "6,650",
+      option: " ,유기농,무농약,목초우유,유기가공식품",
+      option2: "인기,새물품,햇물품",
+      type: "0",
+      type2: "0",
+      link: "#",
+
+      optionNon: "option-none",
+    },
+  ];
+  let popData5 = [
+    {
+      id: "good010203",
+      img: "recommend1.jpg",
+      title: "유기농단백질가루",
+      unit: "녹차맛:300g",
+      price: "16,000",
+      option: "",
+      option2: "인기,새물품,햇물품",
+      type: "3",
+      type2: "0",
+      type: "0",
+      link: "#",
+      optionNon: "option-none",
+    },
+    {
+      id: "good010203",
+      img: "recommend2.jpg",
+      title: "견과바",
+      unit: "35g",
+      price: "2,100",
+      option: " ,유기농,무농약,목초우유,유기가공식품",
+      option2: "인기,새물품,햇물품",
+      type: "0",
+      type2: "0",
+      link: "#",
+
+      optionNon: "option-none",
+    },
+    {
+      id: "good010203",
+      img: "recommend3.jpg",
+      title: "매일견과",
+      unit: "25g*10봉",
+      price: "22,500",
+      option: " ,유기농,무농약,목초우유,유기가공식품",
+      option2: "인기,새물품,햇물품",
+      type: "0",
+      type2: "0",
+      link: "#",
+      none: "good-none",
+      optionNon: "option-none",
+    },
+    {
+      id: "good010203",
+      img: "recommend4.jpg",
+      title: "카카오파이",
+      unit: "152g/4개",
+      price: "6,650",
+      option: " ,유기농,무농약,목초우유,유기가공식품",
+      option2: "인기,새물품,햇물품",
+      type: "0",
+      type2: "0",
+      link: "#",
+
+      optionNon: "option-none",
+    },
+  ];
+  let popData6 = [
+    {
+      id: "good010203",
+      img: "recommend1.jpg",
+      title: "유기농단백질가루",
+      unit: "녹차맛:300g",
+      price: "16,000",
+      option: "",
+      option2: "인기,새물품,햇물품",
+      type: "3",
+      type2: "0",
+      type: "0",
+      link: "#",
+      optionNon: "option-none",
+    },
+    {
+      id: "good010203",
+      img: "recommend2.jpg",
+      title: "견과바",
+      unit: "35g",
+      price: "2,100",
+      option: " ,유기농,무농약,목초우유,유기가공식품",
+      option2: "인기,새물품,햇물품",
+      type: "0",
+      type2: "0",
+      link: "#",
+
+      optionNon: "option-none",
+    },
+    {
+      id: "good010203",
+      img: "recommend3.jpg",
+      title: "매일견과",
+      unit: "25g*10봉",
+      price: "22,500",
+      option: " ,유기농,무농약,목초우유,유기가공식품",
+      option2: "인기,새물품,햇물품",
+      type: "0",
+      type2: "0",
+      link: "#",
+      none: "good-none",
+      optionNon: "option-none",
+    },
+    {
+      id: "good010203",
+      img: "recommend4.jpg",
+      title: "카카오파이",
+      unit: "152g/4개",
+      price: "6,650",
+      option: " ,유기농,무농약,목초우유,유기가공식품",
+      option2: "인기,새물품,햇물품",
+      type: "0",
+      type2: "0",
+      link: "#",
+
+      optionNon: "option-none",
+    },
+  ];
+  let popData7 = [
+    {
+      id: "good010203",
+      img: "recommend1.jpg",
+      title: "유기농단백질가루",
+      unit: "녹차맛:300g",
+      price: "16,000",
+      option: "",
+      option2: "인기,새물품,햇물품",
+      type: "3",
+      type2: "0",
+      type: "0",
+      link: "#",
+      optionNon: "option-none",
+    },
+    {
+      id: "good010203",
+      img: "recommend2.jpg",
+      title: "견과바",
+      unit: "35g",
+      price: "2,100",
+      option: " ,유기농,무농약,목초우유,유기가공식품",
+      option2: "인기,새물품,햇물품",
+      type: "0",
+      type2: "0",
+      link: "#",
+
+      optionNon: "option-none",
+    },
+    {
+      id: "good010203",
+      img: "recommend3.jpg",
+      title: "매일견과",
+      unit: "25g*10봉",
+      price: "22,500",
+      option: " ,유기농,무농약,목초우유,유기가공식품",
+      option2: "인기,새물품,햇물품",
+      type: "0",
+      type2: "0",
+      link: "#",
+      none: "good-none",
+      optionNon: "option-none",
+    },
+    {
+      id: "good010203",
+      img: "recommend4.jpg",
+      title: "카카오파이",
+      unit: "152g/4개",
+      price: "6,650",
+      option: " ,유기농,무농약,목초우유,유기가공식품",
+      option2: "인기,새물품,햇물품",
+      type: "0",
+      type2: "0",
+      link: "#",
+
+      optionNon: "option-none",
+    },
+  ];
+  let popData8 = [
+    {
+      id: "good010203",
+      img: "recommend1.jpg",
+      title: "유기농단백질가루",
+      unit: "녹차맛:300g",
+      price: "16,000",
+      option: "",
+      option2: "인기,새물품,햇물품",
+      type: "3",
+      type2: "0",
+      type: "0",
+      link: "#",
+      optionNon: "option-none",
+    },
+    {
+      id: "good010203",
+      img: "recommend2.jpg",
+      title: "견과바",
+      unit: "35g",
+      price: "2,100",
+      option: " ,유기농,무농약,목초우유,유기가공식품",
+      option2: "인기,새물품,햇물품",
+      type: "0",
+      type2: "0",
+      link: "#",
+
+      optionNon: "option-none",
+    },
+    {
+      id: "good010203",
+      img: "recommend3.jpg",
+      title: "매일견과",
+      unit: "25g*10봉",
+      price: "22,500",
+      option: " ,유기농,무농약,목초우유,유기가공식품",
+      option2: "인기,새물품,햇물품",
+      type: "0",
+      type2: "0",
+      link: "#",
+      none: "good-none",
+      optionNon: "option-none",
+    },
+    {
+      id: "good010203",
+      img: "recommend4.jpg",
+      title: "카카오파이",
+      unit: "152g/4개",
+      price: "6,650",
+      option: " ,유기농,무농약,목초우유,유기가공식품",
+      option2: "인기,새물품,햇물품",
+      type: "0",
+      type2: "0",
+      link: "#",
+
+      optionNon: "option-none",
+    },
+  ];
+  let popData9 = [
+    {
+      id: "good010203",
+      img: "recommend1.jpg",
+      title: "유기농단백질가루",
+      unit: "녹차맛:300g",
+      price: "16,000",
+      option: "",
+      option2: "인기,새물품,햇물품",
+      type: "3",
+      type2: "0",
+      type: "0",
+      link: "#",
+      optionNon: "option-none",
+    },
+    {
+      id: "good010203",
+      img: "recommend2.jpg",
+      title: "견과바",
+      unit: "35g",
+      price: "2,100",
+      option: " ,유기농,무농약,목초우유,유기가공식품",
+      option2: "인기,새물품,햇물품",
+      type: "0",
+      type2: "0",
+      link: "#",
+
+      optionNon: "option-none",
+    },
+    {
+      id: "good010203",
+      img: "recommend3.jpg",
+      title: "매일견과",
+      unit: "25g*10봉",
+      price: "22,500",
+      option: " ,유기농,무농약,목초우유,유기가공식품",
+      option2: "인기,새물품,햇물품",
+      type: "0",
+      type2: "0",
+      link: "#",
+      none: "good-none",
+      optionNon: "option-none",
+    },
+    {
+      id: "good010203",
+      img: "recommend4.jpg",
+      title: "카카오파이",
+      unit: "152g/4개",
+      price: "6,650",
+      option: " ,유기농,무농약,목초우유,유기가공식품",
+      option2: "인기,새물품,햇물품",
+      type: "0",
+      type2: "0",
+      link: "#",
+
+      optionNon: "option-none",
+    },
+  ];
+  let popData10 = [
+    {
+      id: "good010203",
+      img: "recommend1.jpg",
+      title: "유기농단백질가루",
+      unit: "녹차맛:300g",
+      price: "16,000",
+      option: "",
+      option2: "인기,새물품,햇물품",
+      type: "3",
+      type2: "0",
+      type: "0",
+      link: "#",
+      optionNon: "option-none",
+    },
+    {
+      id: "good010203",
+      img: "recommend2.jpg",
+      title: "견과바",
+      unit: "35g",
+      price: "2,100",
+      option: " ,유기농,무농약,목초우유,유기가공식품",
+      option2: "인기,새물품,햇물품",
+      type: "0",
+      type2: "0",
+      link: "#",
+
+      optionNon: "option-none",
+    },
+    {
+      id: "good010203",
+      img: "recommend3.jpg",
+      title: "매일견과",
+      unit: "25g*10봉",
+      price: "22,500",
+      option: " ,유기농,무농약,목초우유,유기가공식품",
+      option2: "인기,새물품,햇물품",
+      type: "0",
+      type2: "0",
+      link: "#",
+      none: "good-none",
+      optionNon: "option-none",
+    },
+    {
+      id: "good010203",
+      img: "recommend4.jpg",
+      title: "카카오파이",
+      unit: "152g/4개",
+      price: "6,650",
+      option: " ,유기농,무농약,목초우유,유기가공식품",
+      option2: "인기,새물품,햇물품",
+      type: "0",
+      type2: "0",
+      link: "#",
+
+      optionNon: "option-none",
+    },
+  ];
+  let popData11 = [
+    {
+      id: "good010203",
+      img: "recommend1.jpg",
+      title: "유기농단백질가루",
+      unit: "녹차맛:300g",
+      price: "16,000",
+      option: "",
+      option2: "인기,새물품,햇물품",
+      type: "3",
+      type2: "0",
+      type: "0",
+      link: "#",
+      optionNon: "option-none",
+    },
+    {
+      id: "good010203",
+      img: "recommend2.jpg",
+      title: "견과바",
+      unit: "35g",
+      price: "2,100",
+      option: " ,유기농,무농약,목초우유,유기가공식품",
+      option2: "인기,새물품,햇물품",
+      type: "0",
+      type2: "0",
+      link: "#",
+
+      optionNon: "option-none",
+    },
+    {
+      id: "good010203",
+      img: "recommend3.jpg",
+      title: "매일견과",
+      unit: "25g*10봉",
+      price: "22,500",
+      option: " ,유기농,무농약,목초우유,유기가공식품",
+      option2: "인기,새물품,햇물품",
+      type: "0",
+      type2: "0",
+      link: "#",
+      none: "good-none",
+      optionNon: "option-none",
+    },
+    {
+      id: "good010203",
+      img: "recommend4.jpg",
+      title: "카카오파이",
+      unit: "152g/4개",
+      price: "6,650",
+      option: " ,유기농,무농약,목초우유,유기가공식품",
+      option2: "인기,새물품,햇물품",
+      type: "0",
+      type2: "0",
+      link: "#",
+
+      optionNon: "option-none",
+    },
+  ];
+  let popData12 = [
+    {
+      id: "good010203",
+      img: "recommend1.jpg",
+      title: "유기농단백질가루",
+      unit: "녹차맛:300g",
+      price: "16,000",
+      option: "",
+      option2: "인기,새물품,햇물품",
+      type: "3",
+      type2: "0",
+      type: "0",
+      link: "#",
+      optionNon: "option-none",
+    },
+    {
+      id: "good010203",
+      img: "recommend2.jpg",
+      title: "견과바",
+      unit: "35g",
+      price: "2,100",
+      option: " ,유기농,무농약,목초우유,유기가공식품",
+      option2: "인기,새물품,햇물품",
+      type: "0",
+      type2: "0",
+      link: "#",
+
+      optionNon: "option-none",
+    },
+    {
+      id: "good010203",
+      img: "recommend3.jpg",
+      title: "매일견과",
+      unit: "25g*10봉",
+      price: "22,500",
+      option: " ,유기농,무농약,목초우유,유기가공식품",
+      option2: "인기,새물품,햇물품",
+      type: "0",
+      type2: "0",
+      link: "#",
+      none: "good-none",
+      optionNon: "option-none",
+    },
+    {
+      id: "good010203",
+      img: "recommend4.jpg",
+      title: "카카오파이",
+      unit: "152g/4개",
+      price: "6,650",
+      option: " ,유기농,무농약,목초우유,유기가공식품",
+      option2: "인기,새물품,햇물품",
+      type: "0",
+      type2: "0",
+      link: "#",
+
+      optionNon: "option-none",
+    },
+  ];
+  let popData13 = [
+    {
+      id: "good010203",
+      img: "recommend1.jpg",
+      title: "유기농단백질가루",
+      unit: "녹차맛:300g",
+      price: "16,000",
+      option: "",
+      option2: "인기,새물품,햇물품",
+      type: "3",
+      type2: "0",
+      type: "0",
+      link: "#",
+      optionNon: "option-none",
+    },
+    {
+      id: "good010203",
+      img: "recommend2.jpg",
+      title: "견과바",
+      unit: "35g",
+      price: "2,100",
+      option: " ,유기농,무농약,목초우유,유기가공식품",
+      option2: "인기,새물품,햇물품",
+      type: "0",
+      type2: "0",
+      link: "#",
+
+      optionNon: "option-none",
+    },
+    {
+      id: "good010203",
+      img: "recommend3.jpg",
+      title: "매일견과",
+      unit: "25g*10봉",
+      price: "22,500",
+      option: " ,유기농,무농약,목초우유,유기가공식품",
+      option2: "인기,새물품,햇물품",
+      type: "0",
+      type2: "0",
+      link: "#",
+      none: "good-none",
+      optionNon: "option-none",
+    },
+    {
+      id: "good010203",
+      img: "recommend4.jpg",
+      title: "카카오파이",
+      unit: "152g/4개",
+      price: "6,650",
+      option: " ,유기농,무농약,목초우유,유기가공식품",
+      option2: "인기,새물품,햇물품",
+      type: "0",
+      type2: "0",
+      link: "#",
+
+      optionNon: "option-none",
+    },
+  ];
+  let popData14 = [
+    {
+      id: "good010203",
+      img: "recommend1.jpg",
+      title: "유기농단백질가루",
+      unit: "녹차맛:300g",
+      price: "16,000",
+      option: "",
+      option2: "인기,새물품,햇물품",
+      type: "3",
+      type2: "0",
+      type: "0",
+      link: "#",
+      optionNon: "option-none",
+    },
+    {
+      id: "good010203",
+      img: "recommend2.jpg",
+      title: "견과바",
+      unit: "35g",
+      price: "2,100",
+      option: " ,유기농,무농약,목초우유,유기가공식품",
+      option2: "인기,새물품,햇물품",
+      type: "0",
+      type2: "0",
+      link: "#",
+
+      optionNon: "option-none",
+    },
+    {
+      id: "good010203",
+      img: "recommend3.jpg",
+      title: "매일견과",
+      unit: "25g*10봉",
+      price: "22,500",
+      option: " ,유기농,무농약,목초우유,유기가공식품",
+      option2: "인기,새물품,햇물품",
+      type: "0",
+      type2: "0",
+      link: "#",
+      none: "good-none",
+      optionNon: "option-none",
+    },
+    {
+      id: "good010203",
+      img: "recommend4.jpg",
+      title: "카카오파이",
+      unit: "152g/4개",
+      price: "6,650",
+      option: " ,유기농,무농약,목초우유,유기가공식품",
+      option2: "인기,새물품,햇물품",
+      type: "0",
+      type2: "0",
+      link: "#",
+
+      optionNon: "option-none",
+    },
+  ];
+  makeList(popData1, ".popular-wrap", 4);
+
+  function popList() {
+    document.getElementById("pop-1").onclick = function () {
+      makeList(popData1, ".popular-wrap", 4);
+    };
+    document.getElementById("pop-2").onclick = function () {
+      makeList(popData2, ".popular-wrap", 4);
+    };
+    document.getElementById("pop-3").onclick = function () {
+      makeList(popData3, ".popular-wrap", 4);
+    };
+    document.getElementById("pop-4").onclick = function () {
+      makeList(popData4, ".popular-wrap", 4);
+    };
+    document.getElementById("pop-5").onclick = function () {
+      makeList(popData5, ".popular-wrap", 4);
+    };
+    document.getElementById("pop-6").onclick = function () {
+      makeList(popData6, ".popular-wrap", 4);
+    };
+    document.getElementById("pop-7").onclick = function () {
+      makeList(popData7, ".popular-wrap", 4);
+    };
+    document.getElementById("pop-8").onclick = function () {
+      makeList(popData8, ".popular-wrap", 4);
+    };
+    document.getElementById("pop-9").onclick = function () {
+      makeList(popData9, ".popular-wrap", 4);
+    };
+    document.getElementById("pop-10").onclick = function () {
+      makeList(popData10, ".popular-wrap", 4);
+    };
+    document.getElementById("pop-11").onclick = function () {
+      makeList(popData11, ".popular-wrap", 4);
+    };
+    document.getElementById("pop-12").onclick = function () {
+      makeList(popData12, ".popular-wrap", 4);
+    };
+    document.getElementById("pop-13").onclick = function () {
+      makeList(popData13, ".popular-wrap", 4);
+    };
+    document.getElementById("pop-14").onclick = function () {
+      makeList(popData14, ".popular-wrap", 4);
+    };
+  }
+  popList();
+  let swBrand = new Swiper(".sw-brand", {
+    slidesPerView: 3,
+    spaceBetween: 20,
+    pagination: {
+      el: ".sw-brand-pg",
+      type: "fraction",
+    },
+    navigation: {
+      nextEl: ".sw-brand-next",
+      prevEl: ".sw-brand-prev",
+    },
+  });
+  let swBanner = new Swiper(".sw-banner", {
+    loop: true,
+    slidesPerView: 2,
+    navigation: {
+      nextEl: ".sw-banner-next",
+      prevEl: ".sw-banner-prev",
+    },
+  });
+  let recipeInput = document.querySelector(".recipe-input input");
+  let recipeInputTotal = document.querySelector(".recipe-total-input input");
+  recipeInput.onclick = function () {
+    document.querySelector(".recipe-input label").classList.add("recipe-click");
+  };
+  recipeInputTotal.onclick = function () {
+    document
+      .querySelector(".recipe-total-input label")
+      .classList.toggle("recipe-click");
+  };
 };
