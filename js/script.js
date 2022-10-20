@@ -1523,4 +1523,16 @@ window.onload = function () {
       .querySelector(".recipe-total-input label")
       .classList.toggle("recipe-click");
   };
+  let swReview = new Swiper(".sw-review", {
+    slidesPerView: 3,
+    spaceBetween: 16,
+    navigation: {
+      nextEl: ".sw-review-next",
+      prevEl: ".sw-review-prev",
+    },
+    pagination: {
+      el: ".sw-review-pg",
+      type: "fraction",
+    },
+  });
 };

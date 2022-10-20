@@ -1511,7 +1511,7 @@ body {
 }
 .review .inner {
   position: relative;
-  display: block;
+  display: flex;
 }
 .review-left {
   padding-top: 10px;
@@ -1527,54 +1527,59 @@ body {
   margin: 25px 0 0 0;
 }
 .sw-review {
-  width: 895px;
+  width: 896px;
 }
 .sw-review .swiper-slide {
-  padding: 35px 0 36px 0;
-  text-align: center;
+  position: relative;
+  padding: 30px 27px 30px 20px;
   background: #fff;
+  /* height: 230px; */
+}
+.sw-review .swiper-slide .review-img {
+  position: absolute;
+  right: 22px;
+  top: 27px;
+  width: 66px;
 }
 .sw-review .swiper-slide img {
-  width: 105px;
-  height: 76px;
+  width: 100%;
 }
-.sw-review .swiper-slide p {
-  margin-top: 15px;
-  font-size: 18px;
-  font-weight: 500;
-  line-height: 27px;
+.sw-review .swiper-slide .review-name {
+  overflow: hidden;
+  padding-right: 70px;
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 25px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
-.sw-review .swiper-slide ul {
-  position: relative;
-  display: flex;
-  margin-top: 34px;
-  padding-top: 6px;
+.sw-review .swiper-slide .review-name a {
 }
-.sw-review .swiper-slide ul::after {
-  content: "";
-  position: absolute;
-  left: 50%;
-  bottom: 0;
-  width: 1px;
-  height: 62px;
-  background: #e3e3e3;
-}
-.sw-review .swiper-slide ul li {
-  width: 50%;
-}
-.sw-review .swiper-slide ul li dt {
-  font-size: 16px;
-  line-height: 24px;
-  color: #666;
-}
-.sw-review .swiper-slide ul li dd {
+.review-star {
   margin-top: 5px;
-  font-size: 18px;
+  padding-left: 24px;
+  font-size: 17px;
   font-weight: 500;
-  line-height: 27px;
+  line-height: 20px;
+  background: url("../images/icoRating.png") no-repeat left center;
 }
-.sw-review .good-box ul.good-info li {
-  padding: 0 15px;
+.review-text {
+  margin-top: 30px;
+  font-size: 13px;
+  line-height: 20px;
+}
+.review-text a {
+  display: inline-block;
+  overflow: hidden;
+  height: 60px;
+  text-overflow: ellipsis;
+  white-space: normal;
+}
+.review-username {
+  margin-top: 15px;
+  font-size: 13px;
+  line-height: 18px;
+  font-weight: 400;
 }
 .sw-review-control {
   width: 141px;
@@ -1616,6 +1621,7 @@ body {
 .notice {
   position: relative;
   display: block;
+  padding-top: 80px;
 }
 .notice .inner {
   position: relative;
