@@ -1625,7 +1625,56 @@ body {
 }
 .notice .inner {
   position: relative;
+  display: flex;
+}
+.notice .inner::before {
+  content: "";
+  position: absolute;
+  left: 399px;
+  width: 1px;
+  height: 175px;
+  background: #e5e5e5;
+}
+.notice .inner::after {
+  content: "";
+  position: absolute;
+  left: 799px;
+
+  width: 1px;
+  height: 175px;
+  background: #e5e5e5;
+}
+.notice-left {
+  position: relative;
+
+  width: 399px;
+  height: 175px;
+  padding: 0 30px 0 40px;
+}
+
+.notice-box {
   display: block;
+}
+.notice-btn {
+  display: flex;
+}
+.notice-title {
+  position: relative;
+  display: block;
+  border: 0;
+  background: none;
+  cursor: pointer;
+  font-weight: 700;
+  color: #000;
+}
+.notice-title:first-child {
+  padding-right: 11px;
+  margin-right: 10px;
+}
+.notice-list {
+}
+.notice-list2 {
+  display: none;
 }
 /* 푸터 */
 .footer {
